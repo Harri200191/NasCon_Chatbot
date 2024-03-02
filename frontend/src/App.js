@@ -1,6 +1,5 @@
-import './App.css';
-import Chat from './Chatbot/Chat';
-import Chat2 from "./Chatbot/Chat2";
+import './App.css'; 
+import Chat2 from "./Chatbot/Chat2"; 
 
 function App() {
   return (
