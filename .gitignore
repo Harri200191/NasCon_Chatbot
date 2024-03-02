@@ -1,3 +1,6 @@
 .env
 /node_modules
 /_pycache_
+*.json
+*.jsonl
+/wandb

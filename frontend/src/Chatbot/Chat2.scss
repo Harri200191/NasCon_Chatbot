@@ -7,7 +7,7 @@
     background-color: #fff;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
-    width: 80vw;
+    width: 60vw;
     max-height: 150vh;
     height: 700px;
     overflow-y: auto;
@@ -78,4 +78,8 @@
   
   .stop-icon:hover {
     color: #440000;
+  }
+
+  .message { 
+    margin-bottom: 10px;
   }

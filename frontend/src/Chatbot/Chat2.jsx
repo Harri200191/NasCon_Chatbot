@@ -11,23 +11,34 @@ const Chatbot = () => {
   const [isRecording, setIsRecording] = useState(false);
   const [audioChunks, setAudioChunks] = useState([]);
   const [mediaRecorder, setMediaRecorder] = useState(null);
+  const [responses, setResponses] = useState("Hello there! How can I help you today?");
  
-
   const handleUserInput = (e) => {
     setUserInput(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    if (userInput.trim() !== "") {
-      // Add user message to messages state
+    if (userInput.trim() !== "") { 
       setMessages((prevMessages) => [
         ...prevMessages,
         { text: userInput, isUser: true },
       ]);
-      setUserInput(""); // Clear input field
-      // Call function to process user input (e.g., send to backend for processing)
+      setUserInput("");  
     }
+ 
+    axios.get(`http://127.0.0.1:5000/api/generate-text/${userInput}`)
+      .then((response) => {   
+        setResponses(response.data.text);
+        console.log('Response:', response.data.text);
+        setMessages((prevMessages) => [
+          ...prevMessages,
+          { text: response.data.text, isUser: false },
+        ]);
+      })
+      .catch((error) => {  
+        console.log(error) 
+      });  
   };
 
   const startRecording = async () => {
@@ -90,18 +101,10 @@ const Chatbot = () => {
     <div className="main">
         <div className="chatbot-container">
         <div className="chatbot-header">Chatbot</div>
-        <div className="chatbot-content">
-            {/* Display messages */}
+        <div className="chatbot-content"> 
             {messages.map((message, index) => (
-            <div
-                key={index}
-                className={`message ${message.isUser ? "user" : "bot"}`}
-            >
-                <div
-                className={`message-box ${
-                    message.isUser ? "user-box" : "bot-box"
-                }`}
-                >
+            <div key={index} className={`message ${message.isUser ? "user" : "bot"}`}>
+                <div className={`message-box ${ message.isUser ? "user-box" : "bot-box"}`}>
                 {message.text}
                 </div>
             </div>
