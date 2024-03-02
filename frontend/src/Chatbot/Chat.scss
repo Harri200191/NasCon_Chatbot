@@ -1,0 +1,120 @@
+/*------------------------------------------------------------------------------*/
+/* Chatbot Container */
+.chatbot-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  width: 1000px;
+  height: auto;
+  max-height: 400vh;
+  overflow-y: auto;
+}
+
+/* Chatbot Header */
+.chatbot-header {
+  font-size: xx-large;
+  font-weight: 600; 
+  background-color: #004992;
+  color: #fff;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px; 
+}
+
+/* Chatbot Header */
+.chatbot-header {
+  font-size: min(5vw, 36px); /* Responsive font size */
+  font-weight: 600; 
+  background-color: #004992;
+  color: #fff;
+  padding: 1em; /* Adjust padding as needed */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px; 
+}
+
+
+/* Chatbot Content */
+.chatbot-content {
+  padding: 20px;
+}
+
+/* Chat Input and Send Button */
+.chat-input {
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.chat-input button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.chat-input button:hover {
+  background-color: #0056b3;
+}
+
+/* Minimize Button */
+.minimize-button {
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.minimize-button:hover {
+  background-color: #819dbc;
+}
+
+/* Styling for the user's message box (dark blue on the right) */
+.message.user .message-box {
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  max-width: 70%;
+  margin-left: auto; /* Pushes user messages to the right */
+}
+
+/* Styling for the bot's message box (grey on the left) */
+.message.bot .message-box {
+  background-color: #ccc;
+  color: #000;
+  border-radius: 10px;
+  padding: 10px;
+  max-width: 70%;
+  margin-right: auto; /* Pushes bot messages to the left */
+}
+
+  
